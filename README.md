@@ -1,5 +1,7 @@
 # Lubi Web · 原插件运行版
 
+> **结构整理版（Phase A）**：原有界面和功能保持不变，历史模型 / 文档与当前实现已明确分开。最新的完整回归和真实原生对照结果见 [验收记录](docs/验收记录.md)。
+
 此项目以 `obsidian_task_kanban/插件源码/lubi` 的 **1.8.0 / schema v14** 为基准。不是重新画一套类似页面：原插件的业务、视图、表单、交互和全部样式直接运行；仅把 Obsidian 宿主 API 替换为浏览器宿主与独立 SQLite 虚拟 Vault。
 
 `packages/plugin-runtime/src` 的 71 份源文件／样式有逐文件 SHA-256 校验。宿主适配在 `apps/web/src/host`，后端在 `apps/api/src`。历史阶段文档集中在 [`docs/archive/`](docs/archive/README.md)，不代表本版状态；当前说明入口见 [文档索引](docs/README.md)。
