@@ -21,14 +21,16 @@
     "setup": "node scripts/setup.mjs",
     "start:api": "npm run start -w @lubi/api",
     "test:security": "node --import tsx --test test/security.mjs",
-    "verify": "npm run check:upstream && npm run build && npm test && npm run test:parity && npm run test:security && npm run test:backup && npm run test:launcher && npm run test:plugin && npm run test:browser",
+    "verify": "npm run check:upstream && npm run test:structure && npm run build && npm test && npm run test:parity && npm run test:security && npm run test:backup && npm run test:launcher && npm run test:plugin && npm run test:host && npm run test:browser",
     "postinstall": "node scripts/prepare-upstream.mjs",
     "backup": "node scripts/backup.mjs",
     "restore:db": "node scripts/restore-db.mjs",
     "test:backup": "node --test test/backup.mjs",
     "test:layout": "node scripts/run-plugin-tests.mjs layout",
     "test:native": "node test/native.mjs",
-    "test:launcher": "node --test test/launcher.mjs"
+    "test:launcher": "node --test test/launcher.mjs",
+    "test:structure": "node --test test/structure.mjs",
+    "test:host": "node test/host.mjs"
   },
   "engines": {
     "node": ">=24"

@@ -1,0 +1,160 @@
+{
+  "baseline": "433a258c6cf5f509edccf4265b54e8525a2dfdd5",
+  "contract": {
+    "exports": [
+      "App",
+      "DropdownComponent",
+      "FileSystemAdapter",
+      "ItemView",
+      "Menu",
+      "Modal",
+      "Notice",
+      "Platform",
+      "Plugin",
+      "PluginSettingTab",
+      "SecretComponent",
+      "SecretStorage",
+      "Setting",
+      "TFile",
+      "TFolder",
+      "TextComponent",
+      "WorkspaceLeaf",
+      "apiVersion",
+      "downloadText",
+      "normalizePath",
+      "requestUrl",
+      "requireApiVersion",
+      "setIcon"
+    ],
+    "prototypes": {
+      "App": [
+        "bindCommandShortcut",
+        "constructor",
+        "restoreFiles",
+        "showCommands",
+        "showFiles"
+      ],
+      "DropdownComponent": [
+        "addOption",
+        "addOptions",
+        "constructor",
+        "getValue",
+        "onChange",
+        "setDisabled",
+        "setValue"
+      ],
+      "FileSystemAdapter": [
+        "constructor"
+      ],
+      "ItemView": [
+        "constructor"
+      ],
+      "Menu": [
+        "addItem",
+        "addSeparator",
+        "constructor",
+        "showAtMouseEvent",
+        "showAtPosition"
+      ],
+      "Modal": [
+        "close",
+        "constructor",
+        "onClose",
+        "onOpen",
+        "open",
+        "setTitle"
+      ],
+      "Notice": [
+        "constructor",
+        "hide",
+        "setMessage"
+      ],
+      "Plugin": [
+        "addCommand",
+        "addRibbonIcon",
+        "addSettingTab",
+        "constructor",
+        "loadData",
+        "register",
+        "registerEvent",
+        "registerView",
+        "saveData",
+        "unload"
+      ],
+      "PluginSettingTab": [
+        "constructor",
+        "display",
+        "hide"
+      ],
+      "SecretComponent": [
+        "constructor"
+      ],
+      "SecretStorage": [
+        "clear",
+        "constructor",
+        "deleteSecret",
+        "getSecret",
+        "initialize",
+        "listSecrets",
+        "setSecret"
+      ],
+      "Setting": [
+        "addButton",
+        "addDropdown",
+        "addExtraButton",
+        "addText",
+        "addTextArea",
+        "addToggle",
+        "constructor",
+        "setDesc",
+        "setHeading",
+        "setName"
+      ],
+      "TFile": [
+        "constructor"
+      ],
+      "TFolder": [
+        "constructor",
+        "isRoot"
+      ],
+      "TextComponent": [
+        "constructor",
+        "getValue",
+        "onChange",
+        "setDisabled",
+        "setPlaceholder",
+        "setValue"
+      ],
+      "WorkspaceLeaf": [
+        "constructor",
+        "openFile",
+        "setViewState"
+      ],
+      "downloadText": [
+        "constructor"
+      ],
+      "setIcon": [
+        "constructor"
+      ]
+    },
+    "version": "1.13.7",
+    "desktop": false,
+    "mobile": false,
+    "domHelpers": [
+      "createEl",
+      "createDiv",
+      "createSpan",
+      "createSvg",
+      "empty",
+      "setText"
+    ],
+    "firstMarkup": "<div class=\"modal\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\" aria-labelledby=\"web-dialog-1\"><button class=\"modal-header-button mod-raised clickable-icon\" type=\"button\" aria-labelledby=\"web-dialog-1-close\" data-icon=\"x\"><svg class=\"lucide lucide-x svg-icon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\n  <path d=\"M18 6 6 18\"></path>\n  <path d=\"m6 6 12 12\"></path>\n</svg></button><div class=\"modal-header\"><div class=\"modal-title\" id=\"web-dialog-1\">Contract fixture</div></div><div class=\"modal-content\"><input aria-label=\"Fixture input\"></div></div>",
+    "nested": {
+      "rootInert": true,
+      "firstInert": true,
+      "commandListId": "web-command-list-3",
+      "commandLabelId": "web-dialog-2"
+    }
+  },
+  "note": "Captured in a real browser from the unchanged 433a258 baseline before splitting the host. This is an API/markup contract, not a native screenshot reference."
+}

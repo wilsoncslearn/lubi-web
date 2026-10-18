@@ -13,6 +13,14 @@
 - 原 Web **3 任务、2 项目、2 记录**已保留并升级到 v14；原表指纹不变，另有改造前及升级前备份。没有导入或改动原 Obsidian Vault。
 - **看实际截图：打开 [`docs/界面对照.html`](docs/界面对照.html)**；完整结果、备份位置和宿主边界见 [`docs/验收记录.md`](docs/验收记录.md)。截图使用合成数据，不含你的密码或笔记。
 
+## 开发入口
+
+- 当前业务与原 UI：`packages/plugin-runtime/src`，不要在 Web 中另写一套任务模型。
+- 浏览器入口：`apps/web/src/main.ts`；`host/obsidian.ts` 是稳定兼容出口，具体能力按职责分模块。
+- 服务组合入口：`apps/api/src/server.ts`；认证及静态服务在 `http/`，旧 SQL 路由在 `legacy/`。
+- 旧模型包：`@lubi/legacy-domain`，只服务兼容接口，不是当前 v14 核心。
+- 模块职责、安全顺序及不变量见 [架构与数据安全](docs/架构与数据安全.md)。
+
 ## Windows 直接使用
 
 双击 **`启动 Lubi.cmd`**。需要 Node.js **24+**。

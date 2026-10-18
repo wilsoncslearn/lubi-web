@@ -44,6 +44,18 @@ export function legacyWriteBlocked(
   );
 }
 
+// Install immediately after the root authentication hook, before legacy route registration.
+export function registerLegacyWriteGuard(
+  app: FastifyInstance,
+  db: DatabaseSync,
+) {
+  app.addHook("onRequest", async (req, reply) => {
+    const route = req.routeOptions.url || req.url.split("?")[0];
+    if (legacyWriteBlocked(req.method, route, db))
+      return reply.code(409).send({ error: legacyReadOnlyMessage });
+  });
+}
+
 // Register on the same root Fastify instance so the existing auth hooks cover every route.
 // These handlers intentionally preserve the old URLs, schemas and SQL behavior.
 export function registerLegacyRoutes(
