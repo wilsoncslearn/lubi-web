@@ -2,7 +2,7 @@
 
 此项目以 `obsidian_task_kanban/插件源码/lubi` 的 **1.8.0 / schema v14** 为基准。不是重新画一套类似页面：原插件的业务、视图、表单、交互和全部样式直接运行；仅把 Obsidian 宿主 API 替换为浏览器宿主与独立 SQLite 虚拟 Vault。
 
-`packages/plugin-runtime/src` 的 71 份源文件／样式有逐文件 SHA-256 校验。宿主适配在 `apps/web/src/host`，后端在 `apps/api/src`。历史 `docs/mcp-*.md` 保留作早期记录，不代表本版状态。
+`packages/plugin-runtime/src` 的 71 份源文件／样式有逐文件 SHA-256 校验。宿主适配在 `apps/web/src/host`，后端在 `apps/api/src`。历史阶段文档集中在 [`docs/archive/`](docs/archive/README.md)，不代表本版状态；当前说明入口见 [文档索引](docs/README.md)。
 
 ## 本次交付状态 · 2026-10-18
 

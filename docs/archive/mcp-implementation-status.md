@@ -1,10 +1,10 @@
-> 历史设计／阶段记录：当前原插件运行版的使用、架构及验收以 [README](../README.md) 和 [验收记录](验收记录.md) 为准。以下保留原文供追溯。
+> 历史设计／阶段记录：当前原插件运行版的使用、架构及验收以 [README](../../README.md) 和 [验收记录](../验收记录.md) 为准。以下保留原文供追溯。
 
 # Lubi Web 基础工程实施状态
 
 本轮仅创建与原 Vault 完全独立的基础工程：React/Vite 页面、Fastify API、Node 内置 SQLite 持久化、任务与时间记录的最小 CRUD、单用户本地密码登录。暂不把原插件完整 schema v14、日记解析、重复规则、项目、导入或同步宣称为已实现。
 
-代码位于 `apps/web`、`apps/api`、`packages/domain`；本地运行方法和限制见 [README](../README.md)，目标架构见 [设计文档](mcp-lubi-web-architecture.md)。实际验证结果以本轮最终回复为准。
+代码位于 `apps/web`、`apps/api`、`packages/domain`；本地运行方法和限制见 [README](../../README.md)，目标架构见 [设计文档](mcp-lubi-web-architecture.md)。实际验证结果以本轮最终回复为准。
 
 ## 本轮验证
 
