@@ -9,8 +9,8 @@
   "scripts": {
     "dev:api": "npm run dev -w @lubi/api",
     "dev:web": "npm run dev -w @lubi/web",
-    "build": "npm run build -w @lubi/domain && npm run build -w @lubi/api && npm run build -w @lubi/web",
-    "test": "npm run test -w @lubi/domain && npm run test:api",
+    "build": "npm run build -w @lubi/legacy-domain && npm run build -w @lubi/api && npm run build -w @lubi/web",
+    "test": "npm run test -w @lubi/legacy-domain && npm run test:api",
     "test:api": "node --test test/projects.mjs test/restore.mjs",
     "dev": "node scripts/dev.mjs",
     "start": "node scripts/start.mjs",

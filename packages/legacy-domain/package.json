@@ -1,5 +1,5 @@
 {
-  "name": "@lubi/domain",
+  "name": "@lubi/legacy-domain",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -12,5 +12,6 @@
     "typescript": "^5.9.3",
     "@types/node": "^24.0.0",
     "tsx": "^4.20.0"
-  }
+  },
+  "description": "Compatibility rules for the legacy SQL API; current v14 business logic is in plugin-runtime."
 }
