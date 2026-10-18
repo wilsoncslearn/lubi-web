@@ -1,0 +1,19 @@
+{
+  "name": "lubi-web",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev -w @lubi/api",
+    "dev:web": "npm run dev -w @lubi/web",
+    "build": "npm run build -w @lubi/domain && npm run build -w @lubi/api && npm run build -w @lubi/web",
+    "test": "npm run test -w @lubi/domain && npm run test:api",
+    "test:api": "node --test test/projects.mjs test/restore.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
