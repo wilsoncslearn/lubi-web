@@ -1,0 +1,123 @@
+/* Obsidian host primitives. Plugin rules are in the unchanged upstream styles. */
+
+:root { --background-primary:#fff; --background-secondary:#f5f5f7; --background-modifier-border:#e3e3e8; --background-modifier-hover:rgba(0,0,0,.06);
+ --text-normal:#1f1f24; --text-muted:#6f6f7a; --text-faint:#a6a6b0; --text-error:#d03a3a; --interactive-accent:#7b5cff; --text-on-accent:#fff;
+ --color-red:#e03131; --color-blue:#1971c2; --color-green:#2f9e44; --color-purple:#7048e8; --color-orange:#e8590c; --color-yellow:#f08c00; --color-base-60:#8a8a94; --color-base-50:#9a9aa3;
+ --font-ui-small:13px; --font-ui-smaller:12px; --font-ui-medium:15px; --radius-s:4px; --radius-m:8px; --radius-l:12px; --shadow-s:0 2px 8px rgba(0,0,0,.12); }
+html,body { margin:0; height:100%; font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; font-size:15px; color:var(--text-normal); background:var(--background-primary); }
+button { font-family: inherit; }
+.lubi-root { height: 100vh; }
+.lubi-icon svg, .lubi-icon-btn svg, button svg { width:14px; height:14px; display:inline-block; }
+input, select, textarea { font: inherit; font-size:var(--font-ui-small,13px); line-height:normal; border:1px solid var(--background-modifier-border); border-radius:5px; padding:4px 8px; background:var(--background-primary); color:inherit; }
+input[type=checkbox] { width:14px; height:14px; padding:0; }
+textarea { padding:6px 8px; }
+.checkbox-container { display:inline-block; width:40px; height:22px; position:relative; border-radius:12px; background:var(--background-modifier-border); cursor:pointer; }
+.checkbox-container::after { content:""; position:absolute; top:2px; left:2px; width:18px; height:18px; border-radius:50%; background:var(--background-primary); }
+.checkbox-container.is-enabled { background:var(--interactive-accent); }
+.checkbox-container.is-enabled::after { left:20px; }
+button.mod-cta { background: var(--interactive-accent); color:#fff; border:none; }
+button { border:1px solid var(--background-modifier-border); background:var(--background-primary); color:inherit; border-radius:5px; }
+.lubi-root { --lubi-panel-height: 100vh; }
+body.theme-dark { --background-primary:#1e1e22; --background-secondary:#26262b; --background-modifier-border:#3a3a42; --background-modifier-hover:rgba(255,255,255,.07);
+ --text-normal:#dcdce2; --text-muted:#a2a2ad; --text-faint:#72727d; --text-error:#ff6b6b; --interactive-accent:#8b6cff;
+ --color-red:#ff6b6b; --color-blue:#4dabf7; --color-green:#51cf66; --color-purple:#9775fa; --color-orange:#ff922b; --color-yellow:#fcc419; --color-base-60:#8a8a94; --color-base-50:#6a6a73; }
+.modal-bg { position:fixed; inset:0; background:rgba(0,0,0,.35); }
+.modal { position:fixed; left:50%; top:60px; transform:translateX(-50%); background:var(--background-primary); border-radius:12px; padding:20px 24px 18px; box-shadow:0 12px 40px rgba(0,0,0,.25); box-sizing:border-box; }
+.modal-title { font-size:18px; font-weight:700; margin-bottom:14px; }
+
+/* Browser host chrome is deliberately outside the upstream .lubi-* UI. */
+html,body,#root,.workspace-leaf-content { height:100%; min-height:0; }
+body { overflow:hidden; }
+.workspace-leaf-content > .view-content { height:100%; box-sizing:border-box; padding:12px 12px 32px; }
+#root,.workspace-leaf-content { position:relative; overflow:hidden; }
+button { cursor:pointer; }
+button:disabled { cursor:default; opacity:.55; }
+.modal-container { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; overflow:auto; padding:40px 16px; box-sizing:border-box; }
+.modal-container .modal { position:relative; top:auto; left:auto; transform:none; max-height:calc(100dvh - 80px); overflow:auto; flex:0 1 auto; }
+.modal-close-button { position:absolute; right:12px; top:12px; width:28px; height:28px; border:0; background:transparent; display:grid; place-items:center; }
+.modal-close-button svg { width:18px; height:18px; }
+.menu { position:fixed; z-index:3000; min-width:180px; padding:6px; background:var(--background-primary); border:1px solid var(--background-modifier-border); border-radius:8px; box-shadow:var(--shadow-s); }
+.menu-item { display:flex; align-items:center; width:100%; text-align:left; border:0; min-height:34px; gap:10px; padding:7px 12px; background:transparent; }
+.menu-item:hover,.menu-item:focus-visible { background:var(--background-modifier-hover); }
+.menu-item-icon { width:16px; height:16px; display:flex; }
+.menu-item-icon svg { width:16px; height:16px; }
+.notice-container { position:fixed; top:16px; right:16px; z-index:5000; width:min(420px,calc(100vw - 32px)); display:grid; gap:8px; pointer-events:none; }
+.notice { pointer-events:auto; padding:14px 18px; background:var(--background-primary); border:1px solid var(--background-modifier-border); border-radius:8px; box-shadow:var(--shadow-s); font-size:13px; line-height:1.6; overflow-wrap:anywhere; }
+.setting-item { display:flex; align-items:center; gap:20px; padding:14px 0; border-bottom:1px solid var(--background-modifier-border); }
+.setting-item-info { flex:1; min-width:0; }
+.setting-item-name { font-size:14px; line-height:1.5; }
+.setting-item-description { font-size:12px; color:var(--text-muted); line-height:1.55; margin-top:5px; }
+.setting-item-control { display:flex; align-items:center; justify-content:flex-end; gap:8px; flex-wrap:wrap; }
+.setting-item-control input { height:32px; }
+.setting-item-control button { min-height:30px; padding:5px 10px; }
+.web-settings-modal { width:min(920px,calc(100vw - 32px)); }
+.web-host-note { font-size:12px; line-height:1.7; color:var(--text-muted); }
+.web-settings-actions { display:flex; gap:8px; flex-wrap:wrap; }
+.web-settings-actions button { padding:7px 10px; }
+.web-file-modal { width:min(900px,92vw); }
+.web-file-editor { width:100%; min-height:55vh!important; white-space:pre; font-family:Consolas,monospace!important; }
+.web-file-actions { display:flex; align-items:center; gap:12px; }
+.web-file-actions span { flex:1; }
+.web-file-actions button { padding:8px 14px; }
+.web-files { display:flex; flex-direction:column; gap:6px; max-height:65vh; overflow:auto; }
+.web-files button { text-align:left; padding:8px 12px; overflow-wrap:anywhere; }
+.web-boot,.web-login { display:grid; align-content:center; justify-items:center; min-height:100dvh; padding:24px; box-sizing:border-box; }
+.web-boot { text-align:center; gap:12px; }
+.web-boot h1 { margin:0; letter-spacing:-1px; font-size:38px; }
+.web-boot p { max-width:560px; line-height:1.8; color:var(--text-muted); }
+.web-login-card { width:min(400px,100%); }
+.web-eyebrow { font-size:10px; letter-spacing:2px; color:var(--text-muted); }
+.web-login-card h1 { font-size:34px; font-weight:600; letter-spacing:-1px; margin:20px 0 12px; }
+.web-login-card p { color:var(--text-muted); line-height:1.8; font-size:13px; }
+.web-login-card label { display:block; font-size:12px; margin-top:28px; }
+.web-login-card input { display:block; width:100%; height:44px; margin-top:8px; box-sizing:border-box; border-radius:4px; }
+.web-login-card small { display:block; font-size:11px; line-height:1.7; color:var(--text-muted); margin-top:20px; }
+.web-login-card .web-login-error { min-height:20px; color:var(--text-error); margin:10px 0; }
+.web-primary { min-height:44px; padding:10px 18px; background:var(--text-normal); color:var(--background-primary); border:1px solid var(--text-normal); border-radius:4px; }
+.web-login-card .web-primary { width:100%; }
+.web-login-overlay { position:fixed; inset:0; z-index:6000; background:var(--background-primary); }
+@media(max-width:600px){.modal-container{padding:16px 10px;}.modal-container .modal{max-height:calc(100dvh - 32px);}.web-settings-modal{padding:18px 14px;}.setting-item{gap:10px;flex-wrap:wrap;}.setting-item-control{max-width:100%;}}
+
+.web-secret-modal {width:min(520px,92vw);}
+.web-secret-label {display:block;font-size:13px;margin:12px 0;}
+.web-secret-label input {display:block;width:100%;height:36px;box-sizing:border-box;margin-top:6px;}
+
+/* Native Obsidian 1.13.7 host primitives, measured in the isolated real client.
+   Plugin CSS still follows this stylesheet and is never edited. */
+.svg-icon { stroke-width:1.75px; }
+h1,h2 { line-height:1.2; }
+h3 { line-height:1.3; }
+button { font-size:var(--font-ui-small,13px); }
+input[type=checkbox] { appearance:none; position:relative; width:16px; height:16px; border:1px solid #ababab; border-radius:4px; background:transparent; font-size:13.3333px; line-height:normal; cursor:pointer; }
+input[type=checkbox]:checked { background:var(--interactive-accent); border-color:var(--interactive-accent); }
+input[type=checkbox]:checked::after { content:""; position:absolute; inset:2px; background:var(--text-on-accent,#fff); clip-path:polygon(0 45%,16% 29%,38% 53%,84% 5%,100% 22%,38% 94%); }
+::-webkit-scrollbar { width:12px; height:12px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:rgba(0,0,0,.1); border:3px solid transparent; border-radius:6px; background-clip:padding-box; }
+.theme-dark ::-webkit-scrollbar-thumb { background-color:rgba(255,255,255,.1); }
+
+.web-command-palette { width:min(600px,calc(100vw - 24px)); }
+.web-command-palette input { width:100%; }
+.web-command-list { display:grid; gap:3px; max-height:50vh; overflow:auto; }
+.web-command-palette .web-command-item { text-align:left; min-height:36px; padding:8px 12px; border:0; background:transparent; border-radius:5px; }
+.web-command-palette .web-command-item.is-selected,.web-command-palette .web-command-item:hover { background:var(--background-modifier-hover); }
+
+/* Real native modal chrome surrounds, rather than replaces, the plugin form. */
+.modal-container > .modal { border:1px solid #bdbdbd; box-shadow:0 1.8px 7.3px rgba(0,0,0,.07),0 6.3px 24.7px rgba(0,0,0,.114),0 15px 30px rgba(0,0,0,.1); }
+.modal-header { display:block; margin-bottom:.75em; }
+.modal-header-button { position:absolute; right:12px; top:6px; display:flex; align-items:center; justify-content:center; padding:4px; border-radius:4px; appearance:none; border:0; background:transparent; color:#5c5c5c; line-height:1; font:inherit; }
+.modal-header-button svg { width:18px; height:18px; opacity:.85; }
+select { line-height:1.3; }
+
+.modal-container > .modal { display:flex; flex-direction:column; min-height:100px; max-height:85vh; }
+.modal-content { flex-grow:1; }
+.modal-bg { background:rgba(220,220,220,.4); opacity:.85; }
+.theme-dark .modal-bg { background:rgba(0,0,0,.4); }
+input[type=date] { position:relative; }
+body:not(.is-ios):not(.is-android) input[type=date]:not([disabled="true"]) { padding-left:24px; }
+input[type=date]:not([disabled="true"])::-webkit-calendar-picker-indicator { position:absolute; left:4px; right:auto; opacity:.5; }
+
+.theme-dark input[type=checkbox]:not(:checked) { border-color:#666; }
+
+.theme-dark .modal-container > .modal { border-color:#555; box-shadow:0 1.8px 7.3px rgba(0,0,0,.07),0 6.3px 24.7px rgba(0,0,0,.114),0 30px 90px rgba(0,0,0,.2); }
+.theme-dark .modal-header-button { color:#b3b3b3; }

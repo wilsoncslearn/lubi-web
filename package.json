@@ -11,9 +11,31 @@
     "dev:web": "npm run dev -w @lubi/web",
     "build": "npm run build -w @lubi/domain && npm run build -w @lubi/api && npm run build -w @lubi/web",
     "test": "npm run test -w @lubi/domain && npm run test:api",
-    "test:api": "node --test test/projects.mjs test/restore.mjs"
+    "test:api": "node --test test/projects.mjs test/restore.mjs",
+    "dev": "node scripts/dev.mjs",
+    "start": "node scripts/start.mjs",
+    "test:plugin": "node scripts/run-plugin-tests.mjs",
+    "test:parity": "node test/parity.mjs",
+    "test:browser": "node test/browser.mjs",
+    "check:upstream": "node scripts/check-upstream.mjs",
+    "setup": "node scripts/setup.mjs",
+    "start:api": "npm run start -w @lubi/api",
+    "test:security": "node --import tsx --test test/security.mjs",
+    "verify": "npm run check:upstream && npm run build && npm test && npm run test:parity && npm run test:security && npm run test:backup && npm run test:launcher && npm run test:plugin && npm run test:browser",
+    "postinstall": "node scripts/prepare-upstream.mjs",
+    "backup": "node scripts/backup.mjs",
+    "restore:db": "node scripts/restore-db.mjs",
+    "test:backup": "node --test test/backup.mjs",
+    "test:layout": "node scripts/run-plugin-tests.mjs layout",
+    "test:native": "node test/native.mjs",
+    "test:launcher": "node --test test/launcher.mjs"
   },
   "engines": {
     "node": ">=24"
+  },
+  "devDependencies": {
+    "pixelmatch": "^8.0.0",
+    "playwright": "^1.58.0",
+    "pngjs": "^7.0.0"
   }
 }

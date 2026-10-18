@@ -1,3 +1,5 @@
+> 历史设计／阶段记录：当前原插件运行版的使用、架构及验收以 [README](../README.md) 和 [验收记录](验收记录.md) 为准。以下保留原文供追溯。
+
 # 原 Obsidian 插件导出预览（只读）
 
 原插件导出的 JSON envelope 是 `{format:"lubi-data",version:1,exportedAt,taskStore,records}`，任务为 schema v14。此文件与 Web 自己的 `lubi-web-data` 导出格式不同，**不能交给 Web 恢复接口写入**。

@@ -1,0 +1,27 @@
+/* Independent reference-only host calibration. Native measurements are recorded
+   next to this file. No production Web stylesheet is imported here, and no
+   plugin rule or pixel threshold is changed. The original mock API omits the
+   native content wrapper, SVG class, controls, headings and scrollbar defaults. */
+.workspace-leaf-content { height:100%; overflow:hidden; }
+.workspace-leaf-content > .view-content { box-sizing:border-box; padding:12px 12px 32px; }
+.svg-icon { stroke-width:1.75px; }
+h1,h2 { line-height:1.2; }
+h3 { line-height:1.3; }
+button { font-size:var(--font-ui-small,13px); }
+input[type=checkbox] { appearance:none; position:relative; width:16px; height:16px; border:1px solid #ababab; border-radius:4px; background:transparent; font-size:13.3333px; line-height:normal; }
+input[type=checkbox]:checked { background:var(--interactive-accent); border-color:var(--interactive-accent); }
+input[type=checkbox]:checked::after { content:""; position:absolute; inset:2px; background:var(--text-on-accent,#fff); clip-path:polygon(0 45%,16% 29%,38% 53%,84% 5%,100% 22%,38% 94%); }
+::-webkit-scrollbar { width:12px; height:12px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:rgba(0,0,0,.1); border:3px solid transparent; border-radius:6px; background-clip:padding-box; }
+.theme-dark ::-webkit-scrollbar-thumb { background-color:rgba(255,255,255,.1); }
+
+/* Native date controls keep a left-hand picker, including the hidden nav input. */
+input,select,textarea { font-size:var(--font-ui-small,13px); line-height:normal; padding:4px 8px; border-radius:5px; }
+button { border-radius:5px; }
+input[type=date] { position:relative; }
+body:not(.is-ios):not(.is-android) input[type=date]:not([disabled="true"]) { padding-left:24px; }
+input[type=date]:not([disabled="true"])::-webkit-calendar-picker-indicator { position:absolute; left:4px; right:auto; opacity:.5; }
+select { line-height:1.3; }
+
+.theme-dark input[type=checkbox]:not(:checked) { border-color:#666; }

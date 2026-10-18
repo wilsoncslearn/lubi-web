@@ -1,0 +1,16 @@
+/* Upstream styles, imported in exactly their original concatenation order. */
+@import "../../../packages/plugin-runtime/src/styles/00-tokens.css";
+@import "../../../packages/plugin-runtime/src/styles/01-base.css";
+@import "../../../packages/plugin-runtime/src/styles/02-topbar-daily.css";
+@import "../../../packages/plugin-runtime/src/styles/03-tasks.css";
+@import "../../../packages/plugin-runtime/src/styles/04-review.css";
+@import "../../../packages/plugin-runtime/src/styles/05-modals.css";
+@import "../../../packages/plugin-runtime/src/styles/06-settings.css";
+@import "../../../packages/plugin-runtime/src/styles/07-panel-fit.css";
+@import "../../../packages/plugin-runtime/src/styles/08-v1.4-design.css";
+@import "../../../packages/plugin-runtime/src/styles/09-v1.5-planning.css";
+@import "../../../packages/plugin-runtime/src/styles/10-views.css";
+@import "../../../packages/plugin-runtime/src/styles/11-async.css";
+@import "../../../packages/plugin-runtime/src/styles/12-mono.css";
+@import "../../../packages/plugin-runtime/src/styles/13-light-task.css";
+@import "../../../packages/plugin-runtime/src/styles/14-display-fixes.css";

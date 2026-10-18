@@ -1,3 +1,5 @@
+> 历史设计／阶段记录：当前原插件运行版的使用、架构及验收以 [README](../README.md) 和 [验收记录](验收记录.md) 为准。以下保留原文供追溯。
+
 # Web 重复任务第一阶段
 
 本轮把原插件 `src/core/tasks.ts` 的每日/每周/每月发生日规则移植为独立 Web `packages/domain/src/index.ts` 的纯函数；未直接链接原插件仓库。`tasks` 表新增 repeatKind、repeatDays、doneDates、skipDates、startDate、endDate；旧 Web 原型数据库采用只增加列的方式升级，既有任务保留为非重复任务。

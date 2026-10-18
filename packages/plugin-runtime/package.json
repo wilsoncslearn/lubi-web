@@ -1,0 +1,17 @@
+{
+  "name": "@lubi/plugin-runtime",
+  "version": "1.8.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-tests.mjs",
+    "test:core": "node scripts/build-tests.mjs core && node --test \"test/core/*.mjs\"",
+    "test:smoke": "node scripts/build-tests.mjs && node --test \"test/smoke/*.mjs\""
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "jsdom": "^24.1.3",
+    "lucide-static": "1.48.0",
+    "obsidian": "1.14.4"
+  }
+}

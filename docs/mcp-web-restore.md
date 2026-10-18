@@ -1,3 +1,5 @@
+> 历史设计／阶段记录：当前原插件运行版的使用、架构及验收以 [README](../README.md) 和 [验收记录](验收记录.md) 为准。以下保留原文供追溯。
+
 # Web JSON 预览与空库恢复
 
 本功能仅支持**当前 Web 版自身**导出的 `lubi-web-data` v1，不接受原 Obsidian 插件的 `lubi-data` 文件或直接读取 Vault。用户真实 Vault 数据仍需另行设计迁移并明确授权。

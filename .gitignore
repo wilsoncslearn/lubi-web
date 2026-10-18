@@ -8,3 +8,13 @@ data/
 *.db
 *.db-shm
 *.db-wal
+
+# Reproducible checks use synthetic data only.
+test/.out/
+packages/plugin-runtime/test/.out/
+packages/plugin-runtime/preview/
+*.log
+packages/plugin-runtime/styles.css
+
+/backups/
+*.key

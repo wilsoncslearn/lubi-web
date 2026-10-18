@@ -1,7 +1,8 @@
 import { DatabaseSync } from 'node:sqlite';
 import { mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
-const file = resolve(process.env.LUBI_DB_PATH || './data/lubi.db');
+import { fileURLToPath } from 'node:url';
+const file = resolve(process.env.LUBI_DB_PATH || fileURLToPath(new URL('../../../data/lubi.db', import.meta.url)));
 mkdirSync(dirname(file), { recursive: true });
 export const db = new DatabaseSync(file);
 db.exec(`PRAGMA journal_mode=WAL; PRAGMA foreign_keys=ON; PRAGMA busy_timeout=5000;

@@ -1,3 +1,5 @@
+> 历史设计／阶段记录：当前原插件运行版的使用、架构及验收以 [README](../README.md) 和 [验收记录](验收记录.md) 为准。以下保留原文供追溯。
+
 # Web 数据 JSON 导出
 
 接口 `GET /api/export` 需已登录会话；页面侧栏“导出 Web 数据 JSON”由用户主动触发下载。服务端同一 SQLite 读取事务内读取**全部**当前 Web `projects`、`tasks`、`records` 行（不采用记录列表的 500 条显示上限）；响应 `Cache-Control: no-store` 和附件文件名。
